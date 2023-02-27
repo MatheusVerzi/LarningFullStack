@@ -1,10 +1,6 @@
 ﻿using LarningFullStackDomain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LarningFullStackData.Extensions
 {
@@ -18,7 +14,10 @@ namespace LarningFullStackData.Extensions
                 {
                     Id = Guid.Parse("39e46af9-e154-48ec-823a-f16554f5fb8f"),
                     Name = "User Default",
-                    Email = " userdefault@larningFullStack.com"
+                    Email = " userdefault@larningFullStack.com",
+                    DateCreated = DateTime.Now,
+                    DateUpdated = null,
+                    IsDeleted = false,
                 });
 
             return builder;
