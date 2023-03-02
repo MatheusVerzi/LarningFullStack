@@ -16,6 +16,8 @@ namespace LarningFullStackInfra.Context
         {
             modelBuilder.ApplyConfiguration(new UserMap());
 
+            modelBuilder.ApplyGlobalConfiguration();
+
             modelBuilder.SeedData();
 
             base.OnModelCreating(modelBuilder);

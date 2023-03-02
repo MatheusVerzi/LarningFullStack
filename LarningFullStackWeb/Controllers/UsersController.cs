@@ -1,4 +1,5 @@
 ﻿using LarningFullStackApplication.Interfaces;
+using LarningFullStackApplication.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LarningFullStackWeb.Controllers
@@ -18,6 +19,12 @@ namespace LarningFullStackWeb.Controllers
         public IActionResult Get()
         {
             return Ok(this.userService.Get());
+        }
+
+        [HttpPost]
+        public IActionResult Post(UserViewModel userViewModel)
+        {
+            return Ok(this.userService.Post(userViewModel));
         }
     }
 }

@@ -2,6 +2,7 @@
 using LarningFullStackApplication.ViewModels;
 using LarningFullStackDomain.Entities;
 using LarningFullStackDomain.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace LarningFullStackApplication.Services
@@ -29,6 +30,21 @@ namespace LarningFullStackApplication.Services
                     });
 
             return cagada;
+        }
+
+        public bool Post(UserViewModel userViewModel)
+        {
+            User user = new User
+            {
+                Id = Guid.NewGuid(),
+                Email = userViewModel.Email,
+                Name = userViewModel.Name,
+
+            };
+
+            this.userRepository.Create(user);
+
+            return true;
         }
     }
 }
