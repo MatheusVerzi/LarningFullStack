@@ -1,3 +1,5 @@
+using Larning.IoC;
+using LarningFullStackApplication.AutoMapper;
 using LarningFullStackInfra.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Larning.IoC;
 
 namespace LarningFullStackWeb
 {
@@ -27,6 +28,9 @@ namespace LarningFullStackWeb
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LarningDb")).EnableSensitiveDataLogging());
             NativeInjector.RegisterServices(services);
             // In production, the Angular files will be served from this directory
+
+            services.AddAutoMapper(typeof(AutoMapperSetup));
+
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";

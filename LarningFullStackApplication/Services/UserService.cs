@@ -1,8 +1,8 @@
-﻿using LarningFullStackApplication.Interfaces;
+﻿using AutoMapper;
+using LarningFullStackApplication.Interfaces;
 using LarningFullStackApplication.ViewModels;
 using LarningFullStackDomain.Entities;
 using LarningFullStackDomain.Interfaces;
-using System;
 using System.Collections.Generic;
 
 namespace LarningFullStackApplication.Services
@@ -10,39 +10,29 @@ namespace LarningFullStackApplication.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository userRepository;
+        private readonly IMapper mapper;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IMapper mapper)
         {
             this.userRepository = userRepository;
+            this.mapper = mapper;
         }
 
         public List<UserViewModel> Get()
         {
-            var cagada = new List<UserViewModel>();
-            IEnumerable<User> _users = this.userRepository.GetAll();
-            foreach (var user in _users)
-                cagada.Add(
-                    new UserViewModel
-                    {
-                        Id = user.Id,
-                        Name = user.Name,
-                        Email = user.Email,
-                    });
+            var _users = this.userRepository.GetAll();
 
-            return cagada;
+            var _userViewModels = mapper.Map<List<UserViewModel>>(_users);
+
+            return _userViewModels;
         }
 
         public bool Post(UserViewModel userViewModel)
         {
-            User user = new User
-            {
-                Id = Guid.NewGuid(),
-                Email = userViewModel.Email,
-                Name = userViewModel.Name,
 
-            };
+            User _user = mapper.Map<User>(userViewModel);
 
-            this.userRepository.Create(user);
+            this.userRepository.Create(_user);
 
             return true;
         }
