@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33328.57
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Web", "1-Web", "{3B402485-5B0D-4CDE-8E98-F4FBEF33083C}"
 EndProject
@@ -23,7 +23,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2-CrossCutting", "4.2-Cro
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1-Data", "4.1-Data", "{F7727E99-F644-43B9-9414-B97300253CB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Larning.IoC", "Larning.IoC\Larning.IoC.csproj", "{7EDDB1E7-61E6-4AAF-B7C9-7FAA95E285DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Larning.IoC", "Larning.IoC\Larning.IoC.csproj", "{7EDDB1E7-61E6-4AAF-B7C9-7FAA95E285DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Larning.Swagger", "Larning.Swagger\Larning.Swagger.csproj", "{659CA4F2-FB68-4052-B5EE-1C2315EBE617}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{7EDDB1E7-61E6-4AAF-B7C9-7FAA95E285DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EDDB1E7-61E6-4AAF-B7C9-7FAA95E285DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EDDB1E7-61E6-4AAF-B7C9-7FAA95E285DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{659CA4F2-FB68-4052-B5EE-1C2315EBE617}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{659CA4F2-FB68-4052-B5EE-1C2315EBE617}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{659CA4F2-FB68-4052-B5EE-1C2315EBE617}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{659CA4F2-FB68-4052-B5EE-1C2315EBE617}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{4910CAFC-23B1-43DC-9A76-91CCDD4EA7A3} = {C914C3BA-BBF6-4A6B-999C-A2C52E28AA34}
 		{F7727E99-F644-43B9-9414-B97300253CB6} = {C914C3BA-BBF6-4A6B-999C-A2C52E28AA34}
 		{7EDDB1E7-61E6-4AAF-B7C9-7FAA95E285DA} = {4910CAFC-23B1-43DC-9A76-91CCDD4EA7A3}
+		{659CA4F2-FB68-4052-B5EE-1C2315EBE617} = {4910CAFC-23B1-43DC-9A76-91CCDD4EA7A3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CDBF58A-D2E3-456E-BBBF-D1C56FC71B4B}
